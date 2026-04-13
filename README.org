@@ -1,6 +1,8 @@
 #+title: my-locate-library — Fast load-path index for Emacs
 #+author: Fujisawa Electric Management Office
 
+[[https://github.com/sponsors/zawatton21][https://img.shields.io/badge/Sponsor-%E2%9D%A4-pink?style=flat-square]]
+
 Accelerates =locate-library=, =require=, and =load= by pre-building a
 symbol-property index of all files on =load-path=.
 
