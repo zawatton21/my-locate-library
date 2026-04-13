@@ -1,0 +1,65 @@
+#+title: my-locate-library — Fast load-path index for Emacs
+#+author: Fujisawa Electric Management Office
+
+Accelerates =locate-library=, =require=, and =load= by pre-building a
+symbol-property index of all files on =load-path=.
+
+* Installation
+
+** async-installer
+
+#+begin_src emacs-lisp
+(async-installer-github-add "https://github.com/zawatton21/my-locate-library.git"
+                            :branch "master"
+                            :main "my-locate-library.el")
+#+end_src
+
+** straight.el
+
+#+begin_src emacs-lisp
+(straight-use-package
+ '(my-locate-library :type git :host github :repo "zawatton21/my-locate-library"))
+#+end_src
+
+** elpaca
+
+#+begin_src emacs-lisp
+(elpaca (my-locate-library :host github :repo "zawatton21/my-locate-library"))
+#+end_src
+
+** use-package (with straight or elpaca)
+
+#+begin_src emacs-lisp
+;; with straight
+(use-package my-locate-library
+  :straight (my-locate-library :type git :host github :repo "zawatton21/my-locate-library"))
+
+;; with elpaca
+(use-package my-locate-library
+  :ensure (:host github :repo "zawatton21/my-locate-library"))
+#+end_src
+
+** Manual
+
+#+begin_src emacs-lisp
+(add-to-list 'load-path "/path/to/my-locate-library")
+(require 'my-locate-library)
+#+end_src
+
+* Usage
+
+#+begin_src emacs-lisp
+;; After load-path is finalized:
+(my-locate-library-build)
+(my-locate-library-enable)
+
+;; If load-path changes later:
+(my-locate-library-rebuild)
+
+;; To revert to original functions:
+(my-locate-library-disable)
+#+end_src
+
+* License
+
+GPL-3.0. See [[file:LICENSE][LICENSE]].
