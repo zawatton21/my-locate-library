@@ -1,18 +1,18 @@
-#+title: my-locate-library — Fast load-path index for Emacs
-#+author: Fujisawa Electric Management Office
+#+title: my-locate-library — Emacs 用 load-path 高速インデックス
+#+author: 藤澤電気管理事務所
 
-*Languages:* English / [[file:README.ja.org][日本語]]
+*言語:* [[file:README.org][English]] / 日本語
 
 #+html: <a href="https://github.com/sponsors/zawatton21"><img src="https://img.shields.io/badge/Sponsor_%E2%9D%A4_Support_this_project-pink?style=for-the-badge" alt="Sponsor"></a>
 
-Accelerates =locate-library=, =require=, and =load= by pre-building a
-symbol-property index of all files on =load-path=.
+=load-path= 上の全ファイルをシンボルプロパティインデックスとして事前構築することで、
+=locate-library=、=require=、=load= を高速化します。
 
-* Installation
+* インストール
 
 ** async-installer
 
-[[https://github.com/zawatton21/async-installer][async-installer]] — a small, non-blocking package manager for Emacs. Pure Elisp syntax — no macro DSL required.
+[[https://github.com/zawatton21/async-installer][async-installer]] — Emacs 用の小型ノンブロッキングパッケージマネージャ。マクロ DSL 不要の純粋な Elisp 構文で使えます。
 
 #+begin_src emacs-lisp
 (async-installer-git-add "https://github.com/zawatton21/my-locate-library.git"
@@ -33,39 +33,39 @@ symbol-property index of all files on =load-path=.
 (elpaca (my-locate-library :host github :repo "zawatton21/my-locate-library"))
 #+end_src
 
-** use-package (with straight or elpaca)
+** use-package（straight または elpaca と組み合わせて）
 
 #+begin_src emacs-lisp
-;; with straight
+;; straight と組み合わせる場合
 (use-package my-locate-library
   :straight (my-locate-library :type git :host github :repo "zawatton21/my-locate-library"))
 
-;; with elpaca
+;; elpaca と組み合わせる場合
 (use-package my-locate-library
   :ensure (:host github :repo "zawatton21/my-locate-library"))
 #+end_src
 
-** Manual
+** 手動インストール
 
 #+begin_src emacs-lisp
 (add-to-list 'load-path "/path/to/my-locate-library")
 (require 'my-locate-library)
 #+end_src
 
-* Usage
+* 使い方
 
 #+begin_src emacs-lisp
-;; After load-path is finalized:
+;; load-path が確定した後に実行:
 (my-locate-library-build)
 (my-locate-library-enable)
 
-;; If load-path changes later:
+;; 後から load-path が変更された場合:
 (my-locate-library-rebuild)
 
-;; To revert to original functions:
+;; 元の関数に戻す場合:
 (my-locate-library-disable)
 #+end_src
 
-* License
+* ライセンス
 
-GPL-3.0. See [[file:LICENSE][LICENSE]].
+GPL-3.0。詳細は [[file:LICENSE][LICENSE]] を参照してください。
