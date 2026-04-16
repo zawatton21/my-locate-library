@@ -3,7 +3,7 @@
 
 *言語:* [[file:README.org][English]] / 日本語
 
-#+html: <a href="https://github.com/sponsors/zawatton21"><img src="https://img.shields.io/badge/Sponsor_%E2%9D%A4_Support_this_project-pink?style=for-the-badge" alt="Sponsor"></a>
+#+html: <a href="https://github.com/sponsors/zawatton"><img src="https://img.shields.io/badge/Sponsor_%E2%9D%A4_Support_this_project-pink?style=for-the-badge" alt="Sponsor"></a>
 
 =load-path= 上の全ファイルをシンボルプロパティインデックスとして事前構築することで、
 =locate-library=、=require=、=load= を高速化します。
@@ -12,10 +12,10 @@
 
 ** async-installer
 
-[[https://github.com/zawatton21/async-installer][async-installer]] — Emacs 用の小型ノンブロッキングパッケージマネージャ。マクロ DSL 不要の純粋な Elisp 構文で使えます。
+[[https://github.com/zawatton/async-installer][async-installer]] — Emacs 用の小型ノンブロッキングパッケージマネージャ。マクロ DSL 不要の純粋な Elisp 構文で使えます。
 
 #+begin_src emacs-lisp
-(async-installer-git-add "https://github.com/zawatton21/my-locate-library.git"
+(async-installer-git-add "https://github.com/zawatton/my-locate-library.git"
                             :branch "master"
                             :main "my-locate-library.el")
 #+end_src
@@ -24,13 +24,13 @@
 
 #+begin_src emacs-lisp
 (straight-use-package
- '(my-locate-library :type git :host github :repo "zawatton21/my-locate-library"))
+ '(my-locate-library :type git :host github :repo "zawatton/my-locate-library"))
 #+end_src
 
 ** elpaca
 
 #+begin_src emacs-lisp
-(elpaca (my-locate-library :host github :repo "zawatton21/my-locate-library"))
+(elpaca (my-locate-library :host github :repo "zawatton/my-locate-library"))
 #+end_src
 
 ** use-package（straight または elpaca と組み合わせて）
@@ -38,11 +38,11 @@
 #+begin_src emacs-lisp
 ;; straight と組み合わせる場合
 (use-package my-locate-library
-  :straight (my-locate-library :type git :host github :repo "zawatton21/my-locate-library"))
+  :straight (my-locate-library :type git :host github :repo "zawatton/my-locate-library"))
 
 ;; elpaca と組み合わせる場合
 (use-package my-locate-library
-  :ensure (:host github :repo "zawatton21/my-locate-library"))
+  :ensure (:host github :repo "zawatton/my-locate-library"))
 #+end_src
 
 ** 手動インストール

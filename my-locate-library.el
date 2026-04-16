@@ -1,7 +1,7 @@
 ;;; my-locate-library.el --- Fast library path resolution via pre-built index -*- lexical-binding: t; -*-
 
 ;; Author: Fujisawa Electric Management Office
-;; URL: https://github.com/zawatton21/my-locate-library
+;; URL: https://github.com/zawatton/my-locate-library
 ;; Version: 0.1.0
 ;; Keywords: lisp, performance
 ;; Package-Requires: ((emacs "27.1"))

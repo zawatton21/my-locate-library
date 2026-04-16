@@ -3,7 +3,7 @@
 
 *Languages:* English / [[file:README.ja.org][日本語]]
 
-#+html: <a href="https://github.com/sponsors/zawatton21"><img src="https://img.shields.io/badge/Sponsor_%E2%9D%A4_Support_this_project-pink?style=for-the-badge" alt="Sponsor"></a>
+#+html: <a href="https://github.com/sponsors/zawatton"><img src="https://img.shields.io/badge/Sponsor_%E2%9D%A4_Support_this_project-pink?style=for-the-badge" alt="Sponsor"></a>
 
 Accelerates =locate-library=, =require=, and =load= by pre-building a
 symbol-property index of all files on =load-path=.
@@ -12,10 +12,10 @@ symbol-property index of all files on =load-path=.
 
 ** async-installer
 
-[[https://github.com/zawatton21/async-installer][async-installer]] — a small, non-blocking package manager for Emacs. Pure Elisp syntax — no macro DSL required.
+[[https://github.com/zawatton/async-installer][async-installer]] — a small, non-blocking package manager for Emacs. Pure Elisp syntax — no macro DSL required.
 
 #+begin_src emacs-lisp
-(async-installer-git-add "https://github.com/zawatton21/my-locate-library.git"
+(async-installer-git-add "https://github.com/zawatton/my-locate-library.git"
                             :branch "master"
                             :main "my-locate-library.el")
 #+end_src
@@ -24,13 +24,13 @@ symbol-property index of all files on =load-path=.
 
 #+begin_src emacs-lisp
 (straight-use-package
- '(my-locate-library :type git :host github :repo "zawatton21/my-locate-library"))
+ '(my-locate-library :type git :host github :repo "zawatton/my-locate-library"))
 #+end_src
 
 ** elpaca
 
 #+begin_src emacs-lisp
-(elpaca (my-locate-library :host github :repo "zawatton21/my-locate-library"))
+(elpaca (my-locate-library :host github :repo "zawatton/my-locate-library"))
 #+end_src
 
 ** use-package (with straight or elpaca)
@@ -38,11 +38,11 @@ symbol-property index of all files on =load-path=.
 #+begin_src emacs-lisp
 ;; with straight
 (use-package my-locate-library
-  :straight (my-locate-library :type git :host github :repo "zawatton21/my-locate-library"))
+  :straight (my-locate-library :type git :host github :repo "zawatton/my-locate-library"))
 
 ;; with elpaca
 (use-package my-locate-library
-  :ensure (:host github :repo "zawatton21/my-locate-library"))
+  :ensure (:host github :repo "zawatton/my-locate-library"))
 #+end_src
 
 ** Manual
